@@ -12,9 +12,9 @@ describe "FracTicTacToe" do
 		fttt.ttt_main.get_winner.should == "-"	
 	end
 
-	it "No winner ttt_0 O--------" do
+	it "No winner ttt_00 O--------" do
 		fttt = FracTicTacToe.new
-		fttt.ttts.set_ttt_str 0, 0, "O--------"
+		fttt.ttts.set_ttt_str 0, 0 "O--------"
 		fttt.ttt_main.get_winner.should == "-"	
 	end
 

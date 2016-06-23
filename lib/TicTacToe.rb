@@ -25,11 +25,8 @@ class TicTacToe
 	end	
 
 	def initialize
-		@ttt_str="---------"	
-		@empty = empty 
-		@winner = @empty 
-		@circle = circle
-		@cross = cross
+		@ttt_str="---------"	 
+		@winner = empty 
 			
 	end
 		 
@@ -72,6 +69,6 @@ class TicTacToe
 		if t[2]==t[4] and t[2]==t[6] and t[2]!=empty
 			return t[2]
 		end
-		return @empty
+		return empty
 	end
 end
