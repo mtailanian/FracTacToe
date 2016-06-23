@@ -2,7 +2,7 @@ require 'sinatra'
 require_relative './lib/TicTacToe.rb'
 
 get '/' do
-	@@teams = %w{X O}
+	@@teams = %w{O X}
 	@@turn = 0
 	@@winner = "-"
 	@@pos00 = "-"
