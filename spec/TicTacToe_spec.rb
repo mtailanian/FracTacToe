@@ -75,12 +75,61 @@ describe "TicTacToe" do
 
 	end
 
+	it "WINNER X X--X--X-- 036" do
+		ttt = TicTacToe.new
+		ttt.set_ttt_str "X--X--X--"
+		ttt.get_winner.should == "X"	
+	end
 	
-	it "WINNER X XXX------" do
+	it "WINNER X -X--X--X- 147" do
+		ttt = TicTacToe.new
+		ttt.set_ttt_str "-X--X--X-"
+		ttt.get_winner.should == "X"	
+	end
+
+	it "WINNER X --X--X--X 258" do
+		ttt = TicTacToe.new
+		ttt.set_ttt_str "--X--X--X"
+		ttt.get_winner.should == "X"	
+	end
+
+	it "WINNER X XXX------ 012" do
 		ttt = TicTacToe.new
 		ttt.set_ttt_str "XXX------"
 		ttt.get_winner.should == "X"	
 	end
 
+	it "WINNER X ---XXX--- 345" do
+		ttt = TicTacToe.new
+		ttt.set_ttt_str "---XXX---"
+		ttt.get_winner.should == "X"	
+	end
+	
+	it "WINNER X ------XXX 678" do
+		ttt = TicTacToe.new
+		ttt.set_ttt_str "------XXX"
+		ttt.get_winner.should == "X"	
+	end
+
+	it "WINNER X X---X---X 048" do
+		ttt = TicTacToe.new
+		ttt.set_ttt_str "X---X---X"
+		ttt.get_winner.should == "X"	
+	end
+
+
+	it "WINNER X --X-X-X-- 246" do
+		ttt = TicTacToe.new
+		ttt.set_ttt_str "--X-X-X--"
+		ttt.get_winner.should == "X"
+
+	end
+
+	it "WINNER X -XO-X-X--" do
+		ttt = TicTacToe.new
+		ttt.set_ttt_str "-XO-X-X--"
+		ttt.get_winner.should == "-"
+
+	end
 
 end
