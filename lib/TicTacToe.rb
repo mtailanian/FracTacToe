@@ -43,6 +43,10 @@ class TicTacToe
 		@ttt_str = ttt
 	end
 
+	def set_move team, x, y
+		@ttt_str[3 * y + x] = team
+	end
+
 	def validate 
 		t=@ttt_str
 		if t[0]==t[3] and t[0]==t[6] and t[0]!=empty
