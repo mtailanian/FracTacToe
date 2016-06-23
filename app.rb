@@ -2,25 +2,28 @@ require 'sinatra'
 require_relative './lib/TicTacToe.rb'
 
 get '/' do
+	@@ttt = TicTacToe.new
+	@circle=@@ttt.get_circle
+	@cross=@@ttt.get_cross
 	@@teams = %w{O X}
 	@@turn = 0
-	@@winner = "-"
-	@@pos00 = "-"
-	@@pos01 = "-"
-	@@pos02 = "-"
-	@@pos10 = "-"
-	@@pos11 = "-"
-	@@pos12 = "-"
-	@@pos20 = "-"
-	@@pos21 = "-"
-	@@pos22 = "-"
+	@@winner = @@ttt.get_empty
+	@@pos00 = @@ttt.get_empty
+	@@pos01 = @@ttt.get_empty
+	@@pos02 = @@ttt.get_empty
+	@@pos10 = @@ttt.get_empty
+	@@pos11 = @@ttt.get_empty
+	@@pos12 = @@ttt.get_empty
+	@@pos20 = @@ttt.get_empty
+	@@pos21 = @@ttt.get_empty
+	@@pos22 = @@ttt.get_empty
 	erb:fracTacToe
 end
 
 get '/validate' do
-	ttt = TicTacToe.new
-	ttt.set_ttt_str @@pos00 + @@pos01 + @@pos02 + @@pos10 + @@pos11 + @@pos12 + @@pos20 + @@pos21 + @@pos22
-	@@winner = ttt.get_winner
+	
+	@@ttt.set_ttt_str @@pos00 + @@pos01 + @@pos02 + @@pos10 + @@pos11 + @@pos12 + @@pos20 + @@pos21 + @@pos22
+	@@winner = @@ttt.get_winner
 	erb:game_over
 end
 

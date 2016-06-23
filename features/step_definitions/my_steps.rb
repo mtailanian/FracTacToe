@@ -1,5 +1,10 @@
+#encoding: utf-8
 Given(/^Entro a la aplicacion$/) do
   visit "/"
+end
+
+When /^Entro a la validacion$/ do
+  click_button "Validate!"
 end
 
 Then(/^Debo ver "(.*?)"$/) do |text|
