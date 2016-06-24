@@ -1,7 +1,8 @@
 require 'sinatra'
 require_relative './lib/TicTacToe.rb'
-
+require_relative './lib/FracTicTacToe.rb'
 get '/' do
+	@@fttt = FracTicTacToe.new
 	@@ttt = TicTacToe.new
 	@circle=@@ttt.get_circle
 	@cross=@@ttt.get_cross
