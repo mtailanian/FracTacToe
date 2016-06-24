@@ -18,14 +18,10 @@ get '/' do
 	@@pos21 = @@ttt.get_empty
 	@@pos22 = @@ttt.get_empty
 
-	@@pos = []
-	for i in 0..8 do
-		posAux = []
-		for j in 0..8 do
-			posAux.push @@ttt.get_empty
-		end
-		@@pos.push posAux
-	end
+
+	@@pos = Array.new(3){	Array.new(3) {Array.new(3) {Array.new(3, @@ttt.get_empty)}}}
+
+	@@pos[1][0][0][2] = "X"
 
 	erb:fracTacToe
 end
