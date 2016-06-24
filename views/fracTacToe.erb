@@ -9,6 +9,9 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+<style>
+.table-fractictactoe tr td {padding: 5px;}
+</style>
 
 <script type="application/javascript">
 
@@ -41,7 +44,7 @@ $(document).ready(function(){
 
 	var fractactoe = "";
 
-	fractactoe += "<table  class=\"table table-bordered\">";
+	fractactoe += "<table class=\"table-fractictactoe text-center\">";
 
 	for(var i=0;i<=2;i++){
 
@@ -50,7 +53,7 @@ $(document).ready(function(){
 		for(var j=0;j<=2;j++){
 			fractactoe += "<td>";
 			
-			fractactoe += "<table>";
+			fractactoe += "<table class=\"table table-bordered table-tictactoe\">";
 
 			for(var k=0;k<=2;k++){		
 				fractactoe += "<tr>";
@@ -59,9 +62,7 @@ $(document).ready(function(){
 					fractactoe += "<td>";
 					
 					// Aca va celda
-//					fractactoe += "<a id=\"" + i + j + k + l +"\" href="/"" + i + j + k + l + "/">" + fractactoeCells[i][j][k][l] + "</a>";
-					fractactoe += "<a id=\"" + i + j + k + l +"\">" + fractactoeCells[i][j][k][l] + "</a>";
-					//fractactoe += "";
+					fractactoe += "<a id=\"" + i + j + k + l + "\" href=\"" + i + j + k + l + "\">" + fractactoeCells[i][j][k][l] + "</a>";
 
 					fractactoe += "</td>";
 				}
@@ -85,11 +86,13 @@ $(document).ready(function(){
 
 </script>
 
+<div class="container text-center">
+
 <h1>Welcome to FracTacToe</h1>
 
 <h2>El propio tateti</h2>
 
-<h1>
+
 
 <div id="fractactoe">
 
@@ -119,10 +122,14 @@ $(document).ready(function(){
 
 </h1>
 
+<h1><%= "El ganador es "+ @@winner if @@winner != "-" %></h1>
+
+</div>
+
 <!--
 <form action="/validate" method="GET">
 	<input type="submit" value="Validate!" />
 </form>
 -->
 
-<h1><%= "El ganador es "+ @@winner if @@winner != "-" %></h1>
+
