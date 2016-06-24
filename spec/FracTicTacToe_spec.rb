@@ -24,4 +24,13 @@ describe "FracTicTacToe" do
 		fttt.get_ttt_main.get_winner.should == "-"	
 	end
 
+	it "WINNER ttt_00 OOO------" do
+		fttt = FracTicTacToe.new
+		fttt.set_move "X", 0, 0, 0, 0
+		fttt.set_move "X", 0, 0, 0, 1
+		fttt.set_move "X", 0, 0, 0, 2		
+		fttt.get_ttt_str 0, 0
+		fttt.get_ttts[0][0].get_winner.should == "X"	
+	end
+
 end

@@ -17,6 +17,10 @@ class FracTicTacToe
 		return @ttt_main
 	end
 
+	def get_ttts
+		return @ttts
+	end
+
 	def get_ttt_str x, y
 		return @ttts[x][y].get_ttt_str
 	end
