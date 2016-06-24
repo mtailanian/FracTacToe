@@ -1,12 +1,52 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+
+$(document).ready(function(){
+
+	var fractactoe = "";
+
+	for(var i=0;i<=8;i++){
+
+		fractactoe += "<table>";
+
+		fractactoe += "<tr><td>sadfsdfsdf</td></tr>";
+
+		fractactoe += "</table>";
+
+		
+	}
+
+	$("#fractactoe").html(fractactoe);
+
+});
+
+</script>
+
 <h1>Welcome to FracTacToe</h1>
 
 <h2>El propio tateti</h2>
 
 <h1>
 
-<table>
+<div id="fractactoe">
+
+</div>
+
+
+<table id="0000">
 <tr>
-	<td><a id="0000" href="/00"><%=@@pos00%></a></td>
+	<td><a id="0000" href="/00"><%=@@pos[0][0]%></a></td>
 	<td><a id="0001" href="/01"><%=@@pos01%></a></td>
 	<td><a id="0002" href="/02"><%=@@pos02%></a></td>
 </tr>
