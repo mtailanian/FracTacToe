@@ -3,9 +3,9 @@ Given(/^Entro a la aplicacion$/) do
   visit "/"
 end
 
-When /^Entro a la validacion$/ do
-  click_button "Validate!"
-end
+# When /^Entro a la validacion$/ do
+#  click_button "Validate!"
+# end
 
 Then(/^Debo ver "(.*?)"$/) do |text|
   last_response.body.should =~ /#{text}/m

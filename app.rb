@@ -1,7 +1,8 @@
 require 'sinatra'
 require_relative './lib/TicTacToe.rb'
-
+require_relative './lib/FracTicTacToe.rb'
 get '/' do
+	@@fttt = FracTicTacToe.new
 	@@ttt = TicTacToe.new
 	@circle=@@ttt.get_circle
 	@cross=@@ttt.get_cross
@@ -33,6 +34,7 @@ def validate
 	@@winner = @@ttt.get_winner
 end
 
+# get '/:posX/:posY' do
 get '/00' do
 	@@turn += 1
 	@@pos00 = @@teams[@@turn%2]

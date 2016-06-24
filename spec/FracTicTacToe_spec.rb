@@ -24,4 +24,39 @@ describe "FracTicTacToe" do
 		fttt.get_ttt_main.get_winner.should == "-"	
 	end
 
+	it "WINNER ttt_00 OOO------" do
+		fttt = FracTicTacToe.new
+		fttt.set_move "X", 0, 0, 0, 0
+		fttt.set_move "O", 0, 0, 0, 1
+		fttt.set_move "X", 0, 0, 0, 2
+		fttt.set_move "O", 0, 0, 1, 0
+		fttt.set_move "X", 0, 0, 1, 1
+		fttt.set_move "O", 0, 0, 1, 2
+		fttt.set_move "O", 0, 0, 2, 0
+		fttt.set_move "X", 0, 0, 2, 1
+		fttt.set_move "O", 0, 0, 2, 2		
+		fttt.get_ttt_str 0, 0
+		fttt.get_ttts[0][0].get_winner.should == "-"	
+	end
+
+	it "Fractal WINNER ttt OOO------" do
+		fttt = FracTicTacToe.new
+		fttt.set_move "X", 0, 0, 0, 0
+		fttt.set_move "X", 0, 0, 0, 1
+		fttt.set_move "X", 0, 0, 0, 2
+				
+		fttt.set_move "X", 0, 1, 0, 0
+		fttt.set_move "X", 0, 1, 0, 1
+		fttt.set_move "X", 0, 1, 0, 2
+		
+		fttt.set_move "X", 0, 2, 0, 0
+		fttt.set_move "X", 0, 2, 0, 1
+		fttt.set_move "X", 0, 2, 0, 2
+
+		fttt.get_ttt_main.get_winner.should == "X"
+	end
+
+
+	
+
 end
