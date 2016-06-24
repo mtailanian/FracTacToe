@@ -26,6 +26,5 @@ Scenario: Validación Gano X
 	And Click en 0 0 1 1
 	And Click en 0 0 0 1
 	And Click en 0 0 1 0
-	And Click en 0 0 0 2
-	And Entro a la validacion	
+	And Click en 0 0 0 2	
 	Then Debo ver "El ganador es X"
