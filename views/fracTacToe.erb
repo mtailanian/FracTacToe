@@ -122,7 +122,10 @@ $(document).ready(function(){
 
 <h1>Welcome to FracTacToe</h1>
 
-<img src="/pics/frac.gif" style="height: 130px"/>
+<%= "<div class=\"row\"><div class=\"col-md-6\"></div><div class=\"col-md-6\"><img src=\"/pics/frac.gif\" style=\"height: 130px\"/></div></div>" if @@teams[@@turn%2] == "X" %>
+
+<%= "<div class=\"row\"><div class=\"col-md-6\"><img src=\"/pics/cross.gif\" style=\"height: 130px\"/></div><div class=\"col-md-6\"> </div></div>" if @@teams[@@turn%2] == "O" %>
+
 
 <div id="fractactoe">
 
