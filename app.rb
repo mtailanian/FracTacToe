@@ -9,16 +9,6 @@ get '/' do
 	@@teams = [@circle, @cross]
 	@@turn = 0
 	@@winner = @@ttt.get_empty
-	@@pos00 = @@ttt.get_empty
-	@@pos01 = @@ttt.get_empty
-	@@pos02 = @@ttt.get_empty
-	@@pos10 = @@ttt.get_empty
-	@@pos11 = @@ttt.get_empty
-	@@pos12 = @@ttt.get_empty
-	@@pos20 = @@ttt.get_empty
-	@@pos21 = @@ttt.get_empty
-	@@pos22 = @@ttt.get_empty
-
 
 	@@pos = Array.new(3){	Array.new(3) {Array.new(3) {Array.new(3, @@ttt.get_empty)}}}
 
@@ -27,65 +17,21 @@ get '/' do
 	erb:fracTacToe
 end
 
-
-
 def validate
-	@@ttt.set_ttt_str @@pos00 + @@pos01 + @@pos02 + @@pos10 + @@pos11 + @@pos12 + @@pos20 + @@pos21 + @@pos22
-	@@winner = @@ttt.get_winner
+	
+	for x in 0..2
+		for y in 0..2
+			@fttt.get_ttts[x][y].set_ttt_str @@pos[x][y][0][0] + @@pos[x][y][0][1] + @@pos[x][y][0][2] + @@pos[x][y][1][0] + @@pos[x][y][1][1] + @@pos[x][y][1][2] + @@pos[x][y][2][0]+ @@pos[x][y][2][1]+ @@pos[x][y][2][2]
+		end
+	end
+
+	@fttt.update_ttt_main_str
+	@@winner = @fttt.get_ttt_main.get_winner
 end
 
-# get '/:posX/:posY' do
-get '/00' do
+get '/:FposX/:FposY/:posX/:posY' do
 	@@turn += 1
-	@@pos00 = @@teams[@@turn%2]
+	@@pos[:FposX][:FposY][:posX][:posY] = @@teams[@@turn%2]
 	validate
 	erb :fracTacToe
-end
-get '/01' do
-	@@turn += 1
-	@@pos01 = @@teams[@@turn%2]
-	validate
-	erb :fracTacToe
-end
-get '/02' do
-	@@turn += 1
-	@@pos02 = @@teams[@@turn%2]
-	validate
-	erb :fracTacToe
-end
-get '/10' do
-	@@turn += 1
-	@@pos10 = @@teams[@@turn%2]
-	validate
-	erb :fracTacToe
-end
-get '/11' do
-	@@turn += 1
-	@@pos11 = @@teams[@@turn%2]
-	validate
-	erb :fracTacToe
-end
-get '/12' do
-	@@turn += 1
-	@@pos12 = @@teams[@@turn%2]
-	validate
-	erb :fracTacToe
-end
-get '/20' do
-	@@turn += 1
-	@@pos20 = @@teams[@@turn%2]
-	validate
-	erb :fracTacToe
-end
-get '/21' do
-	@@turn += 1
-	@@pos21 = @@teams[@@turn%2]
-	validate
-	erb:fracTacToe
-end
-get '/22' do
-	@@turn += 1
-	@@pos22 = @@teams[@@turn%2]
-	validate
-	erb:fracTacToe
 end
