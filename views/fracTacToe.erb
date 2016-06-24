@@ -62,7 +62,7 @@ $(document).ready(function(){
 					fractactoe += "<td>";
 					
 					// Aca va celda
-					fractactoe += "<a id=\"" + i + j + k + l + "\" href=\"" + i + "/" + j + "/" + k + "/" + l + "\">" + fractactoeCells[i][j][k][l] + "</a>";
+					fractactoe += "<a id=\"" + i + j + k + l + "\" href=\"\/" + i + "/" + j + "/" + k + "/" + l + "\">" + fractactoeCells[i][j][k][l] + "</a>";
 
 					fractactoe += "</td>";
 				}
@@ -98,29 +98,6 @@ $(document).ready(function(){
 
 </div>
 
-<table id="0000">
-<tr>
-	<td><a id="0000" href="/0000"><%=@@pos[0][0]%></a></td>
-	<td><a id="0001" href="/0001"><%=@@pos[0][1]%></a></td>
-	<td><a id="0002" href="/0002"><%=@@pos[0][2]%></a></td>
-</tr>
-<tr>
-	<td><a id="0010" href="/0010"><%=@@pos[1][0]%></a></td>
-	<td><a id="0011" href="/0011"><%=@@pos[1][1]%></a></td>
-	<td><a id="0012" href="/0012"><%=@@pos[1][2]%></a></td>
-</tr>
-<tr>
-	<td><a id="0020" href="/0020"><%=@@pos[2][0]%></a></td>
-	<td><a id="0021" href="/0021"><%=@@pos[2][1]%></a></td>
-	<td><a id="0022" href="/0022"><%=@@pos[2][2]%></a></td>
-</tr>
-</table>
-		</td>
-	</tr>
-
-</table>
-
-</h1>
 
 <h1><%= "El ganador es "+ @@winner if @@winner != "-" %></h1>
 
