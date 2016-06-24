@@ -37,6 +37,7 @@ def validate
 	@@winner = @@ttt.get_winner
 end
 
+# get '/:posX/:posY' do
 get '/00' do
 	@@turn += 1
 	@@pos00 = @@teams[@@turn%2]

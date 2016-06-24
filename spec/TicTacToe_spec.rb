@@ -132,4 +132,11 @@ describe "TicTacToe" do
 
 	end
 
+	it "WINNER X OXOOXOXOX" do
+		ttt = TicTacToe.new
+		ttt.set_ttt_str "OXOOXOXOX"
+		ttt.get_winner.should == "-"
+
+	end
+
 end

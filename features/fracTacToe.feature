@@ -28,3 +28,20 @@ Scenario: Validación Gano X
 	And Click en 0 0 1 0
 	And Click en 0 0 0 2	
 	Then Debo ver "El ganador es X"
+
+
+Scenario: Validación Gano X
+	Given Entro a la aplicacion
+	When Click en 0 0 0 0
+	And Click en 0 0 0 1
+	And Click en 0 0 0 2
+	And Click en 0 0 1 0
+	And Click en 0 0 1 1
+	And Click en 0 0 1 2
+	And Click en 0 0 2 0
+	And Click en 0 0 2 1
+	And Click en 0 0 2 2
+
+	Then Debo ver "El ganador es X"
+
+
