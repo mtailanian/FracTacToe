@@ -9,6 +9,9 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+<style>
+.table-fractictactoe tr td {padding: 5px;}
+</style>
 
 <script type="application/javascript">
 
@@ -41,7 +44,7 @@ $(document).ready(function(){
 
 	var fractactoe = "";
 
-	fractactoe += "<table  class=\"table table-bordered\">";
+	fractactoe += "<table class=\"table-fractictactoe text-center\">";
 
 	for(var i=0;i<=2;i++){
 
@@ -50,7 +53,7 @@ $(document).ready(function(){
 		for(var j=0;j<=2;j++){
 			fractactoe += "<td>";
 			
-			fractactoe += "<table>";
+			fractactoe += "<table class=\"table table-bordered table-tictactoe\">";
 
 			for(var k=0;k<=2;k++){		
 				fractactoe += "<tr>";
@@ -59,9 +62,7 @@ $(document).ready(function(){
 					fractactoe += "<td>";
 					
 					// Aca va celda
-//					fractactoe += "<a id=\"" + i + j + k + l +"\" href="/"" + i + j + k + l + "/">" + fractactoeCells[i][j][k][l] + "</a>";
-					fractactoe += "<a id=\"" + i + j + k + l +"\">" + fractactoeCells[i][j][k][l] + "</a>";
-					//fractactoe += "";
+					fractactoe += "<a id=\"" + i + j + k + l + "\" href=\"" + i + j + k + l + "\">" + fractactoeCells[i][j][k][l] + "</a>";
 
 					fractactoe += "</td>";
 				}
@@ -85,184 +86,24 @@ $(document).ready(function(){
 
 </script>
 
+<div class="container text-center">
+
 <h1>Welcome to FracTacToe</h1>
 
 <h2>El propio tateti</h2>
 
-<h1>
+
 
 <div id="fractactoe">
 
 </div>
+
+<h1><%= "El ganador es "+ @@winner if @@winner != "-" %></h1>
+
+</div>
+
+
 <!--
-<table  class="table table-bordered">
-
-	<tr>
-		<td>
-			<table id="0000">
-			<tr>
-				<td><a id="0000" href="/00"><%=@@pos00%></a></td>
-				<td><a id="0001" href="/01"><%=@@pos01%></a></td>
-				<td><a id="0002" href="/02"><%=@@pos02%></a></td>
-			</tr>
-			<tr>
-				<td><a id="0010" href="/10"><%=@@pos10%></a></td>
-				<td><a id="0011" href="/11"><%=@@pos11%></a></td>
-				<td><a id="0012" href="/12"><%=@@pos12%></a></td>
-			</tr>
-			<tr>
-				<td><a id="0020" href="/20"><%=@@pos20%></a></td>
-				<td><a id="0021" href="/21"><%=@@pos21%></a></td>
-				<td><a id="0022" href="/22"><%=@@pos22%></a></td>
-			</tr>
-			</table>
-		</td>
-
-		<td>
-			<table id="0000">
-			<tr>
-				<td><a id="0000" href="/00"><%=@@pos00%></a></td>
-				<td><a id="0001" href="/01"><%=@@pos01%></a></td>
-				<td><a id="0002" href="/02"><%=@@pos02%></a></td>
-			</tr>
-			<tr>
-				<td><a id="0010" href="/10"><%=@@pos10%></a></td>
-				<td><a id="0011" href="/11"><%=@@pos11%></a></td>
-				<td><a id="0012" href="/12"><%=@@pos12%></a></td>
-			</tr>
-			<tr>
-				<td><a id="0020" href="/20"><%=@@pos20%></a></td>
-				<td><a id="0021" href="/21"><%=@@pos21%></a></td>
-				<td><a id="0022" href="/22"><%=@@pos22%></a></td>
-			</tr>
-			</table>
-		</td>
-
-		<td>
-<table id="0000">
-<tr>
-	<td><a id="0000" href="/00"><%=@@pos00%></a></td>
-	<td><a id="0001" href="/01"><%=@@pos01%></a></td>
-	<td><a id="0002" href="/02"><%=@@pos02%></a></td>
-</tr>
-<tr>
-	<td><a id="0010" href="/10"><%=@@pos10%></a></td>
-	<td><a id="0011" href="/11"><%=@@pos11%></a></td>
-	<td><a id="0012" href="/12"><%=@@pos12%></a></td>
-</tr>
-<tr>
-	<td><a id="0020" href="/20"><%=@@pos20%></a></td>
-	<td><a id="0021" href="/21"><%=@@pos21%></a></td>
-	<td><a id="0022" href="/22"><%=@@pos22%></a></td>
-</tr>
-</table>
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-<table id="0000">
-<tr>
-	<td><a id="0000" href="/00"><%=@@pos00%></a></td>
-	<td><a id="0001" href="/01"><%=@@pos01%></a></td>
-	<td><a id="0002" href="/02"><%=@@pos02%></a></td>
-</tr>
-<tr>
-	<td><a id="0010" href="/10"><%=@@pos10%></a></td>
-	<td><a id="0011" href="/11"><%=@@pos11%></a></td>
-	<td><a id="0012" href="/12"><%=@@pos12%></a></td>
-</tr>
-<tr>
-	<td><a id="0020" href="/20"><%=@@pos20%></a></td>
-	<td><a id="0021" href="/21"><%=@@pos21%></a></td>
-	<td><a id="0022" href="/22"><%=@@pos22%></a></td>
-</tr>
-</table>
-		</td>
-
-		<td>
-<table id="0000">
-<tr>
-	<td><a id="0000" href="/00"><%=@@pos00%></a></td>
-	<td><a id="0001" href="/01"><%=@@pos01%></a></td>
-	<td><a id="0002" href="/02"><%=@@pos02%></a></td>
-</tr>
-<tr>
-	<td><a id="0010" href="/10"><%=@@pos10%></a></td>
-	<td><a id="0011" href="/11"><%=@@pos11%></a></td>
-	<td><a id="0012" href="/12"><%=@@pos12%></a></td>
-</tr>
-<tr>
-	<td><a id="0020" href="/20"><%=@@pos20%></a></td>
-	<td><a id="0021" href="/21"><%=@@pos21%></a></td>
-	<td><a id="0022" href="/22"><%=@@pos22%></a></td>
-</tr>
-</table>
-		</td>
-
-		<td>
-<table id="0000">
-<tr>
-	<td><a id="0000" href="/00"><%=@@pos00%></a></td>
-	<td><a id="0001" href="/01"><%=@@pos01%></a></td>
-	<td><a id="0002" href="/02"><%=@@pos02%></a></td>
-</tr>
-<tr>
-	<td><a id="0010" href="/10"><%=@@pos10%></a></td>
-	<td><a id="0011" href="/11"><%=@@pos11%></a></td>
-	<td><a id="0012" href="/12"><%=@@pos12%></a></td>
-</tr>
-<tr>
-	<td><a id="0020" href="/20"><%=@@pos20%></a></td>
-	<td><a id="0021" href="/21"><%=@@pos21%></a></td>
-	<td><a id="0022" href="/22"><%=@@pos22%></a></td>
-</tr>
-</table>
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-<table id="0000">
-<tr>
-	<td><a id="0000" href="/00"><%=@@pos00%></a></td>
-	<td><a id="0001" href="/01"><%=@@pos01%></a></td>
-	<td><a id="0002" href="/02"><%=@@pos02%></a></td>
-</tr>
-<tr>
-	<td><a id="0010" href="/10"><%=@@pos10%></a></td>
-	<td><a id="0011" href="/11"><%=@@pos11%></a></td>
-	<td><a id="0012" href="/12"><%=@@pos12%></a></td>
-</tr>
-<tr>
-	<td><a id="0020" href="/20"><%=@@pos20%></a></td>
-	<td><a id="0021" href="/21"><%=@@pos21%></a></td>
-	<td><a id="0022" href="/22"><%=@@pos22%></a></td>
-</tr>
-</table>
-		</td>
-
-		<td>
-<table id="0000">
-<tr>
-	<td><a id="0000" href="/00"><%=@@pos00%></a></td>
-	<td><a id="0001" href="/01"><%=@@pos01%></a></td>
-	<td><a id="0002" href="/02"><%=@@pos02%></a></td>
-</tr>
-<tr>
-	<td><a id="0010" href="/10"><%=@@pos10%></a></td>
-	<td><a id="0011" href="/11"><%=@@pos11%></a></td>
-	<td><a id="0012" href="/12"><%=@@pos12%></a></td>
-</tr>
-<tr>
-	<td><a id="0020" href="/20"><%=@@pos20%></a></td>
-	<td><a id="0021" href="/21"><%=@@pos21%></a></td>
-	<td><a id="0022" href="/22"><%=@@pos22%></a></td>
-</tr>
-</table>
-		</td>
-
-		<td>
 <table id="0000">
 <tr>
 	<td><a id="0000" href="/00"><%=@@pos00%></a></td>
@@ -284,35 +125,8 @@ $(document).ready(function(){
 	</tr>
 
 </table>
-
-
-
 -->
 
-
-<table id="0000">
-<tr>
-	<td><a id="0000" href="/00"><%=@@pos00%></a></td>
-	<td><a id="0001" href="/01"><%=@@pos01%></a></td>
-	<td><a id="0002" href="/02"><%=@@pos02%></a></td>
-</tr>
-<tr>
-	<td><a id="0010" href="/10"><%=@@pos10%></a></td>
-	<td><a id="0011" href="/11"><%=@@pos11%></a></td>
-	<td><a id="0012" href="/12"><%=@@pos12%></a></td>
-</tr>
-<tr>
-	<td><a id="0020" href="/20"><%=@@pos20%></a></td>
-	<td><a id="0021" href="/21"><%=@@pos21%></a></td>
-	<td><a id="0022" href="/22"><%=@@pos22%></a></td>
-</tr>
-</table>
-		</td>
-	</tr>
-
-</table>
-
-</h1>
 
 <!--
 <form action="/validate" method="GET">
@@ -320,4 +134,4 @@ $(document).ready(function(){
 </form>
 -->
 
-<h1><%= "El ganador es "+ @@winner if @@winner != "-" %></h1>
+
