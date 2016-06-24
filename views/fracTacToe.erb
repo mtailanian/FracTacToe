@@ -64,6 +64,10 @@ $(document).ready(function(){
 
 </h1>
 
+<!--
 <form action="/validate" method="GET">
 	<input type="submit" value="Validate!" />
 </form>
+-->
+
+<h1><%= "El ganador es "+ @@winner if @@winner != "-" %></h1>
