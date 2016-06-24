@@ -5,7 +5,7 @@ get '/' do
 	@@ttt = TicTacToe.new
 	@circle=@@ttt.get_circle
 	@cross=@@ttt.get_cross
-	@@teams = %w{O X}
+	@@teams = [@circle, @cross]
 	@@turn = 0
 	@@winner = @@ttt.get_empty
 	@@pos00 = @@ttt.get_empty
