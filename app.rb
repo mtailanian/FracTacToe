@@ -17,7 +17,22 @@ get '/' do
 	@@pos20 = @@ttt.get_empty
 	@@pos21 = @@ttt.get_empty
 	@@pos22 = @@ttt.get_empty
+
+	@@pos = []
+	for i in 0..8 do
+		posAux = []
+		for j in 0..8 do
+			posAux.push @@ttt.get_empty
+		end
+		@@pos.push posAux
+	end
+
 	erb:fracTacToe
+end
+
+get '/jquery.js' do
+  content_type :js
+  erb :jquery
 end
 
 get '/validate' do
